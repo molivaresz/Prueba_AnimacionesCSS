@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*** Estructura Grid ***/
+header{
+    grid-area: header;
+    background-color:greenyellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav{
+    grid-area: nav;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+main{
+    grid-area: main;
+    background-color: lightgrey;
+    overflow: auto;
+    padding-bottom: 30px;
+}
+
+footer{
+    grid-area: footer;
+    background-color:darkred;
+}
+
+.grid-container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20em 1fr;
+    grid-template-rows: 6em 1fr 6em;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer";
+}
+
+/*** Logo en Header ***/
+
+.logo_ico{
+    width:50px;
+    height:50px;
+}
+
+.gift{
+    fill: #FF4745;
+}
+
+.inicia{
+    fill: #003cff;
+}
+
+.logo{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo_inicia{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*** Buscar en Header ***/
+
+.buscar{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.3em;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.box_search{
+    width:11em;
+    height: 1.8em;
+    margin-left:5px;
+    font-size: 0.7em;
+}
+
+/*** Titulos en Main ***/
+
+.titulo_juguete{
+    font-family:cursive;
+    font-size: 2.5em;
+    padding: 5px 0px;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nino{
+    background: linear-gradient(90deg, rgba(223,44,25,0.008841036414565795) 0%, rgba(53,9,249,1) 35%, rgba(223,44,25,0.011642156862745057) 100%);
+}
+
+.nina{
+    background: linear-gradient(90deg, rgba(223,44,25,0.008841036414565795) 0%, rgba(249,9,151,1) 35%, rgba(223,44,25,0.011642156862745057) 100%);
+}
+
+.bebe{
+    background: linear-gradient(90deg, rgba(223,44,25,0.008841036414565795) 0%, rgba(249,9,151,1) 42%, rgba(32,33,232,1) 62%, rgba(223,44,25,0.011642156862745057) 100%);
+}
+
+/*** Estilo y animacion de cards ***/
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card, .card1, .card2, .card3, .card4, .card5, .card6, .card7{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-color: white;
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 1px solid gray;
+    box-shadow: 5px 10px 8px #888888; 
+    transition: all 300ms ease;
+}
+
+.card:hover, .card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover, .card6:hover, .card7:hover{
+    transform: scale(1.1) rotate(10deg) translateY(-20px);
+    box-shadow: 0px 20px 30px -15px rgba(0,0,0,0.5);
+    background-color:crimson;
+}
+
+.card:hover, .card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover, .card6:hover, .card7:hover{
+    animation: animacion 1.5s 1 ease;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@keyframes animacion{
+    0%
+    {
+        filter: blur(5px);
+    }
+    50%
+    {
+        filter: blur(0px);
+        text-transform: uppercase;
+        text-align: center;
+    }
+    100%
+    {
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+img {
+    width:100%;
+    height:100%;
+}
+
+button {
+    background-color:midnightblue;
+    color: white;
+    width:50%;
+    padding: 5px 0;
+}
+
+button:hover {
+    background-color:green;
+}
+
+/*** Estilo del menu que se encuentra en nav ***/
+
+.titulo-menu{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5em;
+    color:darkgray;
+    text-shadow:-1px 2px black;
+}
+
+.lista-menu{
+    display: flex;
+    flex-direction: column;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    padding: 10px 0px;
+    list-style: none;
+}
+
+.lista-menu li {
+    padding: 5px 0px;
+}
+
+.lista-menu a {
+    color:white;
+    text-decoration: none;
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lista-menu a:hover {
+    color:goldenrod;
+}
+
+.lista-menu a:hover .face-man, .lista-menu a:hover .face-woman, .lista-menu a:hover .baby-face-outline{
+    fill:goldenrod;
+}
+
+.face-man,
+.face-woman,
+.baby-face-outline{
+    fill:darkgray;
+    width:50px;
+    height:50px;
+}
+
+.lista-menu a:active {
+    color:white;
+    border: 1px solid;
+    background-color:darkgrey;
+}
+
+/*** Estilo de los elementos del footer ***/
+
+.datos_contacto{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 1.1em;
+    margin: 15px 0px;
+    padding-right:15px;
+    border-right: solid white;
+}
+
+.socialmedia{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left:15px;
+}
+
+.contactos_footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.derechos_reservados{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.logo_ico_footer{
+    width:30px;
+    height:30px;
+    fill:darkgray;
+    margin: 10px 0;
+}
+
+/*** media para el movil (celular) ***/
+
+@media (max-width: 576px) {
+
+    /*** Estructura Grid ***/
+
+    .grid-container{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 6em 6em 1fr 6em;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    }
+
+    /*** Ajuste de elementos en header ***/
+
+    .logo_ico{
+        width:35px;
+        height:35px;
+    }    
+
+    .logo{
+        font-size: 1.5em;
+    }
+
+    .buscar{
+        font-size: 1em;
+    }
+
+    /*** Ajuste de Grid y elementos en main ***/
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);        
+    }
+
+    .titulo_juguete{
+        font-size: 1.5em;
+    }
+
+    /*** Ajuste de elementos en nav ***/
+    
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .titulo-menu{
+        font-size: 2em;
+    }
+
+    .lista-menu{
+        display: flex;
+        flex-direction: row;
+    }
+  
+    .face-man,
+    .face-woman,
+    .baby-face-outline{
+        fill:darkgray;
+        width:35px;
+        height:35px;
+        margin:0px 30px;
+    }
+}
+
